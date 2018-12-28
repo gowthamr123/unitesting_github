@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <form #searchForm='ngForm' (ngSubmit)="getUsers(searchForm)" class="form-inline">
+        <label for="Name" class="mr-sm-2">Name:</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" name="name" ngModel >
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <ul *ngFor="let user of usersList">
+        <li style = "cursor: pointer" [routerLink] = "['/users/', user.id]"> {{user.name}} </li>
+      </ul>
+    </div>
+  </div>
+</div>
