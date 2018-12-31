@@ -55,6 +55,11 @@ export class DataService {
   }
 
   getUser(id: number) {
-    return this.userDetails[id];
+    if(this.userDetails[id]) {
+      return this.userDetails[id];
+    } else {
+      return '';
+    }
+    
   }
 }

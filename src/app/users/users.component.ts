@@ -10,6 +10,7 @@ import { DataService } from '../services/data.service';
 export class UsersComponent implements OnInit {
 
   usersList: any;
+  emptyMessage: string = '';
 
   constructor(private dataService: DataService) { }
 
@@ -18,6 +19,12 @@ export class UsersComponent implements OnInit {
 
   getUsers(searchForm: NgForm) {
     this.usersList = this.dataService.getUsersList(searchForm.value.name);
+    if(this.usersList.length == 0) {
+      this.emptyMessage = 'No results to display';
+    } else {
+      this.emptyMessage = '';
+    }  
+    
   }
 
 }

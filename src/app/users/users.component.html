@@ -9,8 +9,11 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" >
     <div class="col-sm-12">
+      
+         <p class="emptyMessageText"> {{ emptyMessage }} </p>
+      
       <ul *ngFor="let user of usersList">
         <li style = "cursor: pointer" [routerLink] = "['/users/', user.id]"> {{user.name}} </li>
       </ul>

@@ -3,7 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { UserdetailComponent } from './users/userdetail/userdetail.component';
 
-const routes: Routes = [
+export const routes: Routes = [
+  {
+    path: '', redirectTo: 'users', pathMatch: 'full'
+  }, 
   {
     path: 'users', component: UsersComponent
   }, 

@@ -1,3 +1,4 @@
-<p>
+{{ noUserFoundMsg }}
+<p class="userDetail" *ngIf="noUserFoundMsg == ''">
   {{ user.name }} <br/> {{ user.dob }} <br/> {{ user.gender }}
 </p>
